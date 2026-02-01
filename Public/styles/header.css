@@ -1,0 +1,163 @@
+/* --- Styles du Header --- */
+.site-header {
+  /* Positionnement et Dimensions */
+  position: fixed; /* Reste fixé à l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Hauteur contenue */
+  z-index: 1000; /* Toujours au-dessus du contenu */
+
+  /* Mise en page (Flexbox) */
+  display: flex;
+  justify-content: space-between; /* Espace : Gauche -- Centre -- Droite */
+  align-items: center;
+  padding: 0 var(--spacing-lg); /* Espacement sur les côtés */
+  box-sizing: border-box;
+
+  /* Apparence (Basé sur tes variables) */
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal); /* Animation fluide */
+}
+
+/* Classe ajoutée par JS pour cacher le header */
+.site-header.header-hidden {
+  transform: translateY(-100%); /* Le remonte hors de l'écran */
+  box-shadow: none;
+}
+
+/* --- 1. Logo --- */
+.logo-text {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+/* --- 2. Navigation (Centre) --- */
+.nav-list {
+  display: flex;
+  gap: var(--spacing-md); /* Espace entre les liens */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-accent); /* Orange au survol */
+}
+
+/* --- 3. Actions (Droite) --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Bouton Connexion (Style lien simple) */
+.btn-link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.btn-link:hover {
+  color: var(--color-primary);
+}
+
+/* Bouton Inscription (Style bouton plein) */
+.btn-primary {
+  text-decoration: none;
+  background-color: var(--color-accent); /* Orange */
+  color: var(--color-text-light); /* Blanc */
+  padding: 0.5rem var(--spacing-sm);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px); /* Petit effet de soulèvement */
+}
+
+.main-content {
+  /* 1. Gestion du Header Fixe */
+  /* On ajoute un padding égal à la hauteur du header (70px)
+     pour que le contenu ne soit pas masqué derrière. */
+  padding-top: 70px;
+
+  /* 2. Mise en page */
+  width: 100%;
+  /* min-height: 100vh garantit que le fond couvre tout l'écran,
+     même si la page est vide. C'est plus joli sur mobile. */
+  min-height: 100vh;
+  
+  /* 3. Apparence */
+  background-color: var(--color-bg-body); /* Ton gris très clair (#F9FAFB) */
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  
+  /* 4. Positionnement */
+  position: relative; /* Utile si tu veux positionner des éléments en absolu dedans */
+  box-sizing: border-box;
+}
+
+/* --- Bouton Profil (Icône ronde) --- */
+.btn-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;     /* Taille fixe pour un rond parfait */
+  height: 40px;
+  border-radius: var(--radius-full); /* Rond parfait */
+  background-color: var(--color-bg-body); /* Fond gris clair */
+  color: var(--color-primary); /* Icône en vert */
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.btn-profile:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light); /* L'icône devient blanche */
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* --- Bouton Déconnexion (Style 'Outline') --- */
+.btn-outline {
+  text-decoration: none;
+  background-color: transparent; /* Fond transparent */
+  color: var(--color-text-muted); /* Gris discret par défaut */
+  padding: 0.5rem var(--spacing-sm);
+  border: 1px solid var(--color-border); /* Bordure fine grise */
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  color: var(--color-danger);       /* Le texte devient rouge */
+  border-color: var(--color-danger); /* La bordure devient rouge */
+  background-color: #fff;
+}

@@ -7,16 +7,16 @@
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/8419f108ca.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="Public/style/styleRoot.css">
-    <link rel="stylesheet" href="Public/style/header.css">
-    <link rel="stylesheet" href="Public/style/footer.css">
-    <link rel="stylesheet" href="Public/style/inscription.css">
-    <link rel="stylesheet" href="Public/style/connexion.css">
-    <link rel="stylesheet" href="Public/style/tableauClient.css">
-    <link rel="stylesheet" href="Public/style/reservation.css">
-    <link rel="stylesheet" href="Public/style/profil.css">
-    <link rel="stylesheet" href="Public/style/mentionsLegales.css">
-    <link rel="stylesheet" href="Public/style/accueil.css">
+    <link rel="stylesheet" href="Public/styles/rootstyle.css">
+    <link rel="stylesheet" href="Public/styles/header.css">
+    <link rel="stylesheet" href="Public/styles/footer.css">
+    <link rel="stylesheet" href="Public/styles/inscription.css">
+    <link rel="stylesheet" href="Public/styles/connexion.css">
+    <link rel="stylesheet" href="Public/styles/tableauClient.css">
+    <link rel="stylesheet" href="Public/styles/reservation.css">
+    <link rel="stylesheet" href="Public/styles/profil.css">
+    <link rel="stylesheet" href="Public/styles/CG.css">
+    <link rel="stylesheet" href="Public/styles/accueil.css">
 
 
     <title>ParisEnVélos</title>
@@ -27,30 +27,54 @@
 //die(); 
 ?>
 
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="brand">
-                <img src="Public/img/logo.png" alt="Logo GéoLivres" class="logo-img">
-            </div>
-            <?php if(!empty($_SESSION['user'])){?>
-
-            <a href="index.php?page=profil" class="profile-link" title="Mon Profil">
-                <span class="profile-icon"><i class="fa-solid fa-user"></i></span> </a>
-            
-            <a href="index.php?page=deconnexion" class="btn btn-outline">Déconnexion</a>
-        <?php }elseif(empty($_SESSION['user'])){?>    
-            <div class="header-actions">
-                <a href="index.php?page=connexion" class="login-link">Connexion</a>
-                <a href="index.php?page=inscription" class="btn btn-primary">Inscription</a>
-            </div>
-
-        <?php } ?>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header id="main-header" class="site-header">
+  
+        <div class="header-logo">
+            <a href="#" class="logo-text">ParisVélo</a>
         </div>
+        <?php if(!empty($_SESSION['user'])){?>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                <?php if($_SESSION['user']['id_role'] == 1): ?> <!-- admin -->
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                <?php endif; ?>
+
+                <?php if($_SESSION['user']['id_role'] == 2): ?>  <!-- vendeur -->
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                <?php endif; ?>
+
+                <?php if($_SESSION['user']['id_role'] == 3): ?> <!-- client -->
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                <?php endif; ?>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="index.php?page=profil" class="btn-profile" aria-label="Mon Profil">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+                <a href="index.php?page=deconnexion" class="btn-outline">
+                    Déconnexion
+                </a>
+            </div>
+
+        <?php }else{?>    
+            <div class="header-actions">
+                <a href="index.php?page=connexion" class="btn-link">Connexion</a>
+                <a href="index.php?page=inscription" class="btn-primary">Inscription</a>
+            </div>
+        <?php }?>
+
     </header>
 
-    <main>
+    <main class="main-content">

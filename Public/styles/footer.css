@@ -1,0 +1,108 @@
+/* --- Conteneur Global du Footer --- */
+.site-footer {
+    background-color: var(--color-primary); /* Ton vert foncé (#0F4C5C) */
+    color: var(--color-text-light);         /* Texte blanc */
+    padding-top: var(--spacing-xl);
+    margin-top: auto; /* Pousse le footer tout en bas si la page est courte */
+}
+
+/* --- Grille Principale --- */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    
+    /* La magie du Grid : crée autant de colonnes de 250px que possible */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+/* --- Typographie et Titres --- */
+.footer-logo {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+}
+
+.footer-section h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-accent); /* Titres en Orange pour le peps */
+}
+
+.footer-text {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: #e2e8f0; /* Un blanc légèrement cassé pour la lecture */
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- Liens --- */
+.footer-links, .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, .contact-info li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+/* Effet au survol des liens */
+.footer-links a:hover {
+    color: var(--color-accent); /* Orange */
+    padding-left: 5px; /* Petit décalage vers la droite */
+}
+
+/* --- Infos Contact avec Icônes --- */
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-size-sm);
+    color: #e2e8f0;
+}
+
+.contact-info i {
+    color: var(--color-accent); /* Icônes en orange */
+    width: 20px; /* Alignement propre */
+}
+
+/* --- Réseaux Sociaux --- */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px); /* L'icône saute un peu */
+}
+
+/* --- Barre Copyright (Bas) --- */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2); /* Assombrit légèrement le fond vert */
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: 0.8rem;
+    color: #94a3b8; /* Gris clair discret */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

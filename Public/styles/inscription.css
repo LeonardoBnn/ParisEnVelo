@@ -1,0 +1,157 @@
+/* --- Mise en page globale de la section --- */
+.auth-section {
+    /* Centre la carte verticalement et horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px); /* 100% écran - Header - Footer pour centrage parfait */
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--color-bg-body);
+}
+
+/* --- La Carte (Card) --- */
+.auth-card {
+    background-color: var(--color-bg-card);
+    width: 100%;
+    /* On augmente la largeur max pour accueillir les 2 colonnes confortablement */
+    max-width: 700px; 
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+}
+
+/* --- Ajustement Responsive --- */
+/* Sur mobile, on repasse tout en colonne unique pour que ça reste lisible */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Les champs s'empilent */
+        gap: var(--spacing-md);
+    }
+}
+
+/* --- En-tête --- */
+.auth-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.auth-header h2 {
+    color: var(--color-primary);
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.auth-header p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/* --- Champs du formulaire --- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.form-row .form-group {
+    flex: 1; /* Les champs Nom/Prénom prennent 50% chacun */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-main);
+}
+
+/* Style des Inputs */
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    background-color: #FAFAFA;
+    transition: all var(--transition-fast);
+}
+
+/* Effet quand on clique dans le champ */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent); /* Devient orange */
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(227, 100, 20, 0.1); /* Petit halo orange */
+}
+
+.form-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* --- Checkbox CGU --- */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-size-sm);
+}
+
+.form-check input {
+    accent-color: var(--color-accent); /* Checkbox orange */
+    width: 16px;
+    height: 16px;
+}
+
+.form-check a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* --- Bouton de validation --- */
+.btn-submit {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    font-weight: 700;
+    padding: var(--spacing-sm);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    margin-top: var(--spacing-sm);
+}
+
+.btn-submit:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* --- Footer du formulaire --- */
+.auth-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.auth-footer a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

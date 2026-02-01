@@ -1,0 +1,82 @@
+/* --- Mise en page de la section légale --- */
+.legal-section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 900px; /* Plus étroit pour une meilleure lecture */
+    margin: 0 auto;   /* Centré */
+}
+
+/* --- Conteneur du texte --- */
+.legal-content {
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Titre Principal --- */
+.legal-title {
+    font-family: var(--font-family-base);
+    color: var(--color-primary);
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-accent); /* Souligné en orange */
+    display: inline-block;
+    padding-bottom: var(--spacing-xs);
+}
+
+.legal-date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xl);
+    font-style: italic;
+}
+
+/* --- Articles --- */
+.legal-article {
+    margin-bottom: var(--spacing-lg);
+}
+
+.legal-article h2 {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.legal-article h3 {
+    color: var(--color-text-main);
+    font-size: var(--font-size-base);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Paragraphes et Listes --- */
+.legal-article p {
+    color: var(--color-text-main);
+    font-size: var(--font-size-base);
+    line-height: 1.8; /* Ligne aérée pour ne pas fatiguer les yeux */
+    margin-bottom: var(--spacing-sm);
+    text-align: justify; /* Justifié pour faire "document officiel" */
+}
+
+.legal-article ul {
+    list-style-type: disc;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.legal-article li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--color-text-main);
+}
+
+.legal-article strong {
+    color: var(--color-primary); /* Mettre en valeur les termes importants */
+    font-weight: 600;
+}

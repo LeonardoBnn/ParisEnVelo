@@ -12,10 +12,10 @@ switch($page){
         require_once "View/commun/accueil.php";
         break;
     case 'connexion';
-        require_once "View/utilisateur/connexion.php";
+        require_once "View/commun/connexion.php";
         break;
     case 'inscription';
-        require_once "View/utilisateur/inscription.php";
+        require_once "View/commun/inscription.php";
         break;
     case 'profil';
         require_once "View/utilisateur/profil.php";
@@ -29,8 +29,8 @@ switch($page){
     case 'reservation';
         require_once "View/client/reservation.php";
         break;
-    case 'mentions';
-        require_once "View/commun/mentionslegales.php";
+    case 'CG';
+        require_once "View/commun/CG.php";
         break;
     case 'modifLivre';
         require_once "View/admin/modifLivre.php";
@@ -51,7 +51,7 @@ switch($page){
         
     case 'deconnexion':
         session_destroy();
-        header('Location:https://127.0.0.1/geolivres/index.php?page=accueil');
+        header('Location:https://127.0.0.1/parisenvelo/index.php?page=accueil');
         break;
 
 }

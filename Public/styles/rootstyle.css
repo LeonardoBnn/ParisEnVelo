@@ -1,0 +1,173 @@
+:root {
+
+  
+  /* Primaire : Un vert canard profond, moderne et professionnel */
+  --color-primary: #0F4C5C;
+  --color-primary-hover: #0a3540;
+  
+  /* Secondaire : Un orange brûlé pour les boutons d'action (CTA) */
+  --color-accent: #E36414;
+  --color-accent-hover: #c5530e;
+
+  /* Neutres : Pour les fonds et les bordures */
+  --color-bg-body: #F9FAFB;      /* Pas tout à fait blanc, plus doux */
+  --color-bg-card: #FFFFFF;      /* Blanc pur pour les conteneurs */
+  --color-border: #E5E7EB;       /* Gris très clair pour les séparations */
+
+  /* Texte : Jamais de noir pur (#000) pour un rendu plus élégant */
+  --color-text-main: #1F2937;    /* Gris très foncé pour le texte principal */
+  --color-text-muted: #6B7280;   /* Gris moyen pour les sous-titres */
+  --color-text-light: #FFFFFF;   /* Pour le texte sur fond sombre */
+
+  /* État du système (Feedback utilisateur) */
+  --color-success: #10B981;      /* Vert pour "Location validée" */
+  --color-warning: #F59E0B;      /* Jaune pour "Vélo en réparation" */
+  --color-danger: #EF4444;       /* Rouge pour "Retard" ou "Erreur" */
+  
+  /* Police sans-serif moderne (ex: Inter, Roboto, ou System UI) */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Tailles de texte (Échelle modulaire) */
+  --font-size-sm: 0.875rem;      /* 14px - Petits détails */
+  --font-size-base: 1rem;        /* 16px - Texte standard */
+  --font-size-lg: 1.125rem;      /* 18px - Titres de section */
+  --font-size-xl: 1.5rem;        /* 24px - Grands titres */
+  --font-size-xxl: 2rem;         /* 32px - Titres principaux */
+
+  /* Espacements standardisés (pour les marges et paddings) */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.5rem;   /* 24px */
+  --spacing-lg: 2rem;     /* 32px */
+  --spacing-xl: 3rem;     /* 48px */
+
+  /* Arrondis (Border Radius) - Donne un aspect moderne et amical */
+  --radius-sm: 4px;
+  --radius-md: 8px;       /* Standard pour les boutons/inputs */
+  --radius-lg: 16px;      /* Pour les cartes (cards) */
+  --radius-full: 9999px;  /* Pour les badges ronds */
+
+  /* Ombres portées (Shadows) pour donner de la profondeur */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Transitions douces */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease-in-out;
+}
+
+* {
+    /* Très important : inclut le padding et border dans la largeur totale */
+    box-sizing: border-box; 
+    /* Enlève les marges par défaut partout (titres, paragraphes, body...) */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* C'est LUI qui enlève ton contour blanc */
+    margin: 0;
+    padding: 0;
+    
+    /* On applique tes variables globales ici */
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    line-height: 1.6; /* Meilleure lisibilité du texte */
+}
+
+/* On s'assure que les images ne dépassent jamais de leur conteneur */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* --- Conteneur Principal de l'alerte --- */
+.alert-royal {
+    background-color: var(--color-bg-card);  /* Ton blanc défini (#FFFFFF) */
+    border-left: 5px solid var(--color-primary); /* Par défaut : Ton vert foncé */
+    box-shadow: var(--shadow-md);            /* Ton ombre standard */
+    border-radius: var(--radius-md);         /* Tes arrondis (8px) */
+    
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* --- Variante Succès (Vert) --- */
+.alert-royal.alert-success {
+    border-left-color: var(--color-success); /* Ton vert émeraude (#10B981) */
+}
+
+.alert-royal.alert-success .alert-icon {
+    color: var(--color-success);
+    /* Astuce : Mélange le vert avec 85% de blanc pour le fond */
+    background-color: color-mix(in srgb, var(--color-success), white 85%);
+}
+
+/* --- Variante Erreur (Rouge) --- */
+/* Note: J'ai remplacé 'error' par 'danger' pour coller à tes variables */
+.alert-royal.alert-error {
+    border-left-color: var(--color-danger); /* Ton rouge (#EF4444) */
+}
+
+.alert-royal.alert-error .alert-icon {
+    color: var(--color-danger);
+    /* Astuce : Mélange le rouge avec 85% de blanc pour le fond */
+    background-color: color-mix(in srgb, var(--color-danger), white 85%);
+}
+
+/* --- L'icône (Cadenas ou autre) --- */
+.alert-icon {
+    font-size: 1.5rem;
+    background-color: var(--color-bg-body); /* Ton fond gris clair par défaut */
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full); /* Cercle parfait */
+    color: var(--color-primary);       /* Ton vert principal */
+}
+
+/* --- Le texte --- */
+.alert-content strong {
+    display: block;
+    color: var(--color-primary);      /* Titre en vert foncé */
+    font-size: var(--font-size-lg);   /* Taille un peu plus grande */
+    margin-bottom: 5px;
+    font-family: var(--font-family-base);
+}
+
+.alert-content p {
+    margin: 0;
+    color: var(--color-text-main);    /* Texte gris foncé */
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+}
+
+/* --- Le lien --- */
+.alert-content a {
+    color: var(--color-accent);       /* Ton orange dynamique */
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.alert-content a:hover {
+    color: var(--color-accent-hover); /* Orange plus foncé au survol */
+    border-bottom: 1px solid var(--color-accent-hover);
+}
+
+/* --- Animation (Optionnel si tu ne l'as pas déjà définie ailleurs) --- */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

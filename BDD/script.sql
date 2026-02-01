@@ -14,7 +14,7 @@ CREATE TABLE Utilisateurs (
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
-    mdp VARCHAR(25) NOT NULL,
+    mdp VARCHAR(150) NOT NULL,
     telephone VARCHAR(20),
     adresse TEXT,
     id_role INT,
