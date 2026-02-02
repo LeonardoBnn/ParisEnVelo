@@ -18,20 +18,16 @@
                 <div class="footer-section">
                     <h4>Explorer</h4>
                     <ul class="footer-links">
-                        <li><a href="index.php?page=catalogue">Nos Vélos</a></li>
-                        <li><a href="index.php?page=tarifs">Tarifs & Abonnements</a></li>
-                        <li><a href="index.php?page=boutiques">Nos Boutiques</a></li>
-                        <li><a href="index.php?page=blog">Blog</a></li>
+                        <li><a href="index.php?page=velos">Nos Vélos</a></li>
+                        <li><a href="index.php?page=blog"></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Informations</h4>
                     <ul class="footer-links">
-                        <li><a href="index.php?page=faq">Aide / FAQ</a></li>
-                        <li><a href="index.php?page=mentions">Mentions Légales</a></li>
-                        <li><a href="index.php?page=cgu">CGU / CGV</a></li>
-                        <li><a href="index.php?page=confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="index.php?page=faq"></a></li>
+                        <li><a href="index.php?page=CG">Mentions Légales</a></li>
                     </ul>
                 </div>
 

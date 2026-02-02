@@ -14,6 +14,25 @@
         </p>
     </div>
 
+    <?php if (isset($_SESSION['flash_message'])){ ?>
+        <?php 
+            $isSuccess = ($_SESSION['flash_type'] == 'success');
+            $colorVar = $isSuccess ? 'var(--color-success)' : 'var(--color-error)';
+            $bgColor = $isSuccess ? '#d4edda' : '#fadbd8';
+            $iconClass = $isSuccess ? 'fa-check' : 'fa-triangle-exclamation';
+        ?>
+        <div class="alert-royal" style="border-left-color: <?= $colorVar ?>;">
+            <div class="alert-icon" style="color: <?= $colorVar ?>; background-color: <?= $bgColor ?>;">
+                <i class="fa-solid <?= $iconClass ?>"></i>
+            </div>
+            <div class="alert-content">
+                <strong>Information</strong>
+                <p><?= $_SESSION['flash_message']; ?></p>
+            </div>
+        </div>
+        <?php unset($_SESSION['flash_message'], $_SESSION['flash_type']); ?>
+    <?php } ?>
+
     <div class="bikes-grid">
         
         <?php 
@@ -50,10 +69,16 @@
                             <?= number_format($velo['prix_journalier'], 2, ',', ' ') ?>€
                             <span>/jour</span>
                         </div>
-                        
-                        <a href="index.php?page=reservation&id_velo=<?= $velo['id_velo'] ?>" class="btn-reserve">
-                            Réserver
-                        </a>
+
+                        <?php if(!empty($_SESSION['user'])){ 
+                                if($_SESSION['user']['id_role'] == '3'){
+                        ?>
+                                    <a href="index.php?page=reservation&id_velo=<?= $velo['id_velo'] ?>" class="btn-reserve">
+                                        Réserver
+                                    </a>
+                        <?php }
+                        }?>
+
                     </div>
                 </div>
             </article>

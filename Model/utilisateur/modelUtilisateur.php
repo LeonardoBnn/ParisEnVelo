@@ -40,7 +40,7 @@ class Utilisateur{
         $req = $this->bdd->prepare("SELECT U.id_utilisateur, U.nom, U.prenom, U.email, U.telephone, 
                                     R.libelle as nom_role, 
                                     E.nom_ecole  
-                                    FROM Utilisateur U
+                                    FROM utilisateurs U
                                     JOIN Role R ON U.fk_id_role = R.id_role
                                     LEFT JOIN Ecole E ON U.fk_id_ecole = E.id_ecole
                                     ORDER BY U.nom ASC

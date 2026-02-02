@@ -36,8 +36,8 @@
             <nav class="header-nav">
                 <ul class="nav-list">
                 <?php if($_SESSION['user']['id_role'] == 1): ?> <!-- admin -->
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=" class="nav-link">Gestion vélos</a></li>
+                    <li><a href="index.php?page=" class="nav-link">Gestion clients</a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                 <?php endif; ?>

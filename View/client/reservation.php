@@ -1,14 +1,7 @@
 <?php
 require_once "Controller/velo/selectVeloById.php";
+require_once "Controller/accessoires/selectAllAccessoires.php";
 
-
-// Simulation des accessoires (SELECT * FROM Accessoires WHERE statut = 'disponible')
-$accessoiresDispo = [
-    ['id_accessoire' => 1, 'nom_accessoire' => 'Casque ABUS Hyban', 'prix_journalier' => 2.00],
-    ['id_accessoire' => 2, 'nom_accessoire' => 'Antivol Chaîne Kryptonite', 'prix_journalier' => 3.00],
-    ['id_accessoire' => 3, 'nom_accessoire' => 'Sacoche Ortlieb 20L', 'prix_journalier' => 5.00],
-    ['id_accessoire' => 4, 'nom_accessoire' => 'Siège Bébé Thule', 'prix_journalier' => 8.00],
-];
 ?>
 
 <section class="main-content">
@@ -44,19 +37,19 @@ $accessoiresDispo = [
         <main>
             <h1 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Finaliser la réservation</h1>
             
-            <form action="traitement_reservation.php" method="POST">
+            <form action="Controller/location/locationController.php" method="POST">
                 
                 <input type="hidden" name="id_velo" value="<?= $velo['id_velo'] ?>">
 
                 <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
                     <div class="form-group" style="flex: 1;">
                         <label for="date_debut" class="form-label">Début de location</label>
-                        <input type="datetime-local" id="date_debut" name="date_debut" class="form-input" required>
+                        <input type="date" id="date_debut" name="date_debut" class="form-input" required>
                     </div>
                     
                     <div class="form-group" style="flex: 1;">
                         <label for="date_fin" class="form-label">Fin prévue</label>
-                        <input type="datetime-local" id="date_fin" name="date_fin" class="form-input" required>
+                        <input type="date" id="date_fin" name="date_fin" class="form-input" required>
                     </div>
                 </div>
 
@@ -68,7 +61,7 @@ $accessoiresDispo = [
                 </p>
 
                 <div class="accessories-list">
-                    <?php foreach ($accessoiresDispo as $acc): ?>
+                    <?php foreach ($allAccessoires as $acc): ?>
                         <div class="accessory-item">
                             <div class="accessory-info">
                                 <h4><?= htmlspecialchars($acc['nom_accessoire']) ?></h4>
@@ -90,7 +83,8 @@ $accessoiresDispo = [
                         </div>
                     <?php endforeach; ?>
                 </div>
-
+                
+                <input type="hidden" name="action" value="ajouter">
                 <div style="text-align: right; margin-top: var(--spacing-lg);">
                     <button type="submit" class="btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
                         Confirmer la demande

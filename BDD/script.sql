@@ -42,14 +42,12 @@ CREATE TABLE Velos (
 -- 5. Table des Locations
 CREATE TABLE Locations (
     id_location INT PRIMARY KEY AUTO_INCREMENT,
-    date_debut DATETIME,
-    date_fin_prevue DATETIME,
-    date_retour_reelle DATETIME NULL,
+    date_debut DATE NOT NULL,
+    date_fin_prevue DATE NOT NULL,
+    date_retour_reelle DATE NULL,
     id_client INT,
-    id_vendeur INT, -- Qui a réalisé la vente
     id_velo INT,
     FOREIGN KEY (id_client) REFERENCES Utilisateurs(id_utilisateur),
-    FOREIGN KEY (id_vendeur) REFERENCES Utilisateurs(id_utilisateur),
     FOREIGN KEY (id_velo) REFERENCES Velos(id_velo)
 );
 
