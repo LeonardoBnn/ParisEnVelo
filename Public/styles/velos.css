@@ -1,0 +1,113 @@
+/* --- Grille des Vélos --- */
+.bikes-grid {
+    display: grid;
+    /* Crée autant de colonnes que possible avec une largeur min de 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- La Carte Vélo --- */
+.bike-card {
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    overflow: hidden; /* Pour que le contenu ne dépasse pas des bords arrondis */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+}
+
+.bike-card:hover {
+    transform: translateY(-5px); /* Petit effet de soulèvement */
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- En-tête de la carte (Image ou Placeholder) --- */
+.bike-card-header {
+    height: 180px;
+    background-color: var(--color-primary); /* Fond vert par défaut si pas d'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 3rem;
+    position: relative;
+}
+
+/* Badge pour le type (Électrique ou non) */
+.bike-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background-color: var(--color-bg-card);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Corps de la carte --- */
+.bike-card-body {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Occupe l'espace restant */
+}
+
+.bike-category {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.bike-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.bike-details {
+    margin-top: auto; /* Pousse les détails vers le bas */
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bike-price {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.bike-price span {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+/* --- Bouton d'action --- */
+.btn-reserve {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+}
+
+.btn-reserve:hover {
+    background-color: var(--color-accent-hover);
+}

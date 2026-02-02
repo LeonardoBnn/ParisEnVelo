@@ -1,0 +1,84 @@
+/* --- Mise en page de la réservation --- */
+.reservation-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Colonne gauche plus petite (Info vélo) */
+    gap: var(--spacing-xl);
+}
+
+/* Responsive : 1 colonne sur mobile */
+@media (max-width: 768px) {
+    .reservation-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Section Accessoires --- */
+.accessories-list {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.accessory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accessory-item:last-child {
+    border-bottom: none;
+}
+
+.accessory-info h4 {
+    margin: 0;
+    font-size: var(--font-size-base);
+    color: var(--color-text-main);
+}
+
+.accessory-price {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* --- Styles des Inputs (Champs) --- */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast);
+    background-color: var(--color-bg-card);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(15, 76, 92, 0.1); /* Petit halo vert */
+}
+
+/* Input quantité petit et compact */
+.qty-input {
+    width: 70px;
+    text-align: center;
+}

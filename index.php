@@ -20,8 +20,8 @@ switch($page){
     case 'profil';
         require_once "View/utilisateur/profil.php";
         break;
-    case 'catalogue';
-        require_once "View/client/catalogue.php";
+    case 'velos';
+        require_once "View/client/velos.php";
         break;
     case 'pretsClient';
         require_once "View/client/pretsClient.php";

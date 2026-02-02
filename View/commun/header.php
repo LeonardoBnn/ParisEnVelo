@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Public/styles/footer.css">
     <link rel="stylesheet" href="Public/styles/inscription.css">
     <link rel="stylesheet" href="Public/styles/connexion.css">
-    <link rel="stylesheet" href="Public/styles/tableauClient.css">
+    <link rel="stylesheet" href="Public/styles/velos.css">
     <link rel="stylesheet" href="Public/styles/reservation.css">
     <link rel="stylesheet" href="Public/styles/profil.css">
     <link rel="stylesheet" href="Public/styles/CG.css">
@@ -50,7 +50,7 @@
                 <?php endif; ?>
 
                 <?php if($_SESSION['user']['id_role'] == 3): ?> <!-- client -->
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=velos" class="nav-link">Nos vélos</a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
