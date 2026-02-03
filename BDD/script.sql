@@ -45,6 +45,7 @@ CREATE TABLE Locations (
     date_debut DATE NOT NULL,
     date_fin_prevue DATE NOT NULL,
     date_retour_reelle DATE NULL,
+    encours BOOLEAN DEFAULT FALSE,
     id_client INT,
     id_velo INT,
     FOREIGN KEY (id_client) REFERENCES Utilisateurs(id_utilisateur),

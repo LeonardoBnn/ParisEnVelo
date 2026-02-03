@@ -9,6 +9,7 @@ require_once "Controller/accessoires/selectAllAccessoires.php";
     <div class="reservation-container">
         
         <aside>
+            
             <div class="bike-card"> <div class="bike-card-header">
                     <span>🚲</span>
                     <?php if ($velo['est_electrique']): ?>
@@ -84,7 +85,10 @@ require_once "Controller/accessoires/selectAllAccessoires.php";
                     <?php endforeach; ?>
                 </div>
                 
+                <input type="hidden" name="statut" value="emprunté">
                 <input type="hidden" name="action" value="ajouter">
+                <input type="hidden" name="id_utilisateur" value="<?php echo $_SESSION['user']['id_utilisateur'] ?>">
+
                 <div style="text-align: right; margin-top: var(--spacing-lg);">
                     <button type="submit" class="btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
                         Confirmer la demande

@@ -23,8 +23,8 @@ switch($page){
     case 'velos';
         require_once "View/client/velos.php";
         break;
-    case 'pretsClient';
-        require_once "View/client/pretsClient.php";
+    case 'listeVelos';
+        require_once "View/vendeur/listeVelos.php";
         break;
     case 'reservation';
         require_once "View/client/reservation.php";
@@ -32,8 +32,8 @@ switch($page){
     case 'CG';
         require_once "View/commun/CG.php";
         break;
-    case 'modifLivre';
-        require_once "View/admin/modifLivre.php";
+    case 'accueilVendeur';
+        require_once "View/vendeur/accueilVendeur.php";
         break;
     case 'ajoutUtilisateur';
         require_once "View/admin/ajoutUtilisateur.php";

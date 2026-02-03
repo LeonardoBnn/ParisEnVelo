@@ -8,26 +8,30 @@ class LocationAccessoire{
         $this->bdd = $bdd;
     }
 
-    public function ajouterLocationAccessoire($date_debut, $date_fin, $id_client, $id_velo){
+    public function ajouterLocationAccessoire($id_location, $accessoires){
+        foreach($accessoires as $id_accessoire => $quantite){
+            $req = $this->bdd->prepare("INSERT INTO location_accessoires(id_location, id_accessoire, quantite) 
+                                                    VALUES (:id_location, :id_accessoire, :quantite)");
+            
+            $req->bindParam(':id_location', $id_location);
+            $req->bindParam(':id_accessoire', $id_accessoire);
+            $req->bindParam(':quantite', $quantite); 
 
-        $req = $this->bdd->prepare("INSERT INTO locations(date_debut, date_fin_prevue, id_client, id_velo) 
-                                                  VALUES (:date_debut, :date_fin, :id_client, :id_velo");
-        
-        $req->bindParam(':date_debut', $date_debut);
-        $req->bindParam(':date_fin', $date_fin);
-        $req->bindParam(':id_client', $id_client);
-        $req->bindParam(':id_velo', $id_velo);
-    
-        return $req->execute();
+            $success = $req->execute();
+        }
+
+        return $success;
     }
 
-    public function readLocations(){
+    public function readLocationAccessoires(){
 
         $req = $this->bdd->prepare("SELECT 
+                                        LA.*, 
                                         L.*, 
-                                        C.*, 
+                                        C.*,
                                         V.* 
-                                    FROM Locations L
+                                    FROM Location_accessoires LA
+                                    JOIN locations L on LA.id_location = L.id_location
                                     JOIN Utilisateurs C ON L.id_client = C.id_utilisateur
                                     JOIN Velos V ON L.id_velo = V.id_velo
                                     ORDER BY L.date_debut ASC;

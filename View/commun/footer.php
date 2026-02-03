@@ -19,7 +19,7 @@
                     <h4>Explorer</h4>
                     <ul class="footer-links">
                         <li><a href="index.php?page=velos">Nos Vélos</a></li>
-                        <li><a href="index.php?page=blog"></a></li>
+                        <li><a href="index.php?page=accueil">accueil</a></li>
                     </ul>
                 </div>
 

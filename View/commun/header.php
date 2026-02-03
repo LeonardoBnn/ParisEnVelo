@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="Public/styles/profil.css">
     <link rel="stylesheet" href="Public/styles/CG.css">
     <link rel="stylesheet" href="Public/styles/accueil.css">
+    <link rel="stylesheet" href="Public/styles/accueilVendeur.css">
 
 
     <title>ParisEnVélos</title>
@@ -43,15 +44,16 @@
                 <?php endif; ?>
 
                 <?php if($_SESSION['user']['id_role'] == 2): ?>  <!-- vendeur -->
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
+                    <li><a href="index.php?page=accueilVendeur" class="nav-link">dashboard</a></li>
+                    <li><a href="index.php?page=listeVelos" class="nav-link">Nos Vélos</a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                 <?php endif; ?>
 
                 <?php if($_SESSION['user']['id_role'] == 3): ?> <!-- client -->
+                    
+                    <li><a href="index.php?page=accueil" class="nav-link">Accueil</a></li>
                     <li><a href="index.php?page=velos" class="nav-link">Nos vélos</a></li>
-                    <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                     <li><a href="index.php?page=" class="nav-link"></a></li>
                 <?php endif; ?>

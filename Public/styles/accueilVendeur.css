@@ -1,0 +1,99 @@
+/* --- Structure du Tableau de Bord --- */
+
+/* Nouveau conteneur principal (Remplace .reservation-container) */
+.dashboard-container {
+    max-width: 1400px; /* On profite des grands écrans */
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    width: 100%;
+}
+
+/* Style "Carte" pour chaque section (Fond blanc + Ombre) */
+.dashboard-card {
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg); /* Plus d'espace interne */
+    margin-bottom: var(--spacing-xl);
+    border: 1px solid var(--color-border);
+}
+
+/* En-têtes de section plus marqués */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.section-header h2 {
+    font-size: var(--font-size-xl); /* Titre plus gros (24px) */
+    color: var(--color-primary);
+    margin: 0;
+}
+
+/* --- Tableaux Aérés --- */
+.dashboard-table {
+    width: 100%;
+    border-collapse: separate; /* Permet l'espacement */
+    border-spacing: 0;
+    margin-top: var(--spacing-sm);
+}
+
+.dashboard-table th {
+    background-color: var(--color-bg-body); /* Fond gris clair pour l'entête */
+    color: var(--color-text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem; /* Un peu petit mais en majuscule ça rend bien */
+    padding: var(--spacing-md); /* Gros padding */
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.dashboard-table td {
+    padding: var(--spacing-md); /* Gros padding pour aérer les lignes */
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    
+    /* CORRECTION MAJEURE : Taille de texte standard */
+    font-size: var(--font-size-base); /* 16px */
+    vertical-align: middle;
+}
+
+/* Effet au survol d'une ligne */
+.dashboard-table tbody tr:hover {
+    background-color: #F3F4F6; /* Gris très clair au survol */
+    transform: scale(1.005); /* Micro effet de zoom */
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Colonne Prix en gros */
+.price-tag {
+    font-weight: 800;
+    font-size: 1.1rem; /* Prix un peu plus gros */
+    color: var(--color-primary);
+    white-space: nowrap; /* Empêche le prix de se couper en 2 lignes */
+}
+
+/* Badges Accessoires plus lisibles */
+.badge-acc {
+    display: inline-block;
+    background-color: #EEF2FF;
+    color: #4338ca; /* Indigo plus lisible */
+    padding: 4px 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem; /* Plus gros qu'avant */
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+/* Boutons dans le tableau */
+.btn-table-action {
+    padding: 0.6rem 1.2rem; /* Boutons plus faciles à cliquer */
+    font-size: 0.9rem;
+}
